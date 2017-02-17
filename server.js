@@ -67,7 +67,6 @@ io.on('connection', function (socket) {
 			sendCurrentUsers(socket);
 		} else {
 			message.timestamp = moment().valueOf();
-			console.log(clientInfo[socket.id]);
 			io.to(clientInfo[socket.id].room).emit('message', message); // AQUI
 		}
 	});
